@@ -2,6 +2,7 @@
 #define GAME_H
 #include <gl/gl.h>
 #include <math.h>
+#include <iostream>
 
 #define MAP_WIDTH 8
 #define MAP_HEIGHT 8
@@ -14,8 +15,9 @@ typedef struct {
     bool isFilled;
     bool colour; /// true - white, false - black
     bool checkerColour; /// true - white, false - black
-    bool isChosen;
-    bool isKing;
+    bool isCheckerChosen;
+    bool isCheckerKing;
+    bool isCheckerMovable;
 } cell;
 
 class Game
@@ -25,6 +27,13 @@ class Game
         int whiteCheckers, blackCheckers;
         bool player; /// 1 - player one(white); false - player two(black)
         bool checkerIsChosen = false;
+        bool neighbourCheck(byte x, byte y, bool colour);
+        bool throughOneCheck(byte x, byte y, bool colour, bool f);
+        bool canEat(byte x, byte y, byte _x, byte _y, bool colour);
+        void setCheckersMovable(byte x, byte y, bool movable);
+        void setAllCheckersMovable(bool movable);
+        void setAllCheckersUnchosen();
+        bool canSomeoneEat(byte& x, byte& y, bool player);
     public:
         Game();
         ~Game();
