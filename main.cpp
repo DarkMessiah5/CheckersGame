@@ -110,10 +110,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
     return msg.wParam;
 }
 
-void checkerManipulation()
-{
-}
-
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)

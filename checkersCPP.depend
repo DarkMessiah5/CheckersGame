@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1646822728 source:c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\main.cpp
+1647148467 source:c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\main.cpp
 	<windows.h>
 	<gl/gl.h>
 	<math.h>
 	"Game.h"
 
-1647004956 c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\include\game.h
+1647150164 c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\include\game.h
 	<gl/gl.h>
 	<math.h>
 	<iostream>
 
-1647005909 source:c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\src\game.cpp
+1647147106 source:c:\users\pavel\desktop\рсясп\2 йСПЯ\opengl\checkerscpp\src\game.cpp
 	"Game.h"
 

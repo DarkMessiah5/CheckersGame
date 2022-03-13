@@ -24,27 +24,32 @@ class Game
 {
     private:
         cell board[MAP_WIDTH][MAP_HEIGHT];
+        bool moveBoard[MAP_WIDTH][MAP_HEIGHT];
         int whiteCheckers, blackCheckers;
         bool player; /// 1 - player one(white); false - player two(black)
         bool checkerIsChosen = false;
-        bool neighbourCheck(byte x, byte y, bool colour);
-        bool throughOneCheck(byte x, byte y, bool colour, bool f);
-        bool canEat(byte x, byte y, byte _x, byte _y, bool colour);
+
+        bool canEat(short x, short y, bool colour, short& _x, short& _y);
         void setCheckersMovable(byte x, byte y, bool movable);
         void setAllCheckersMovable(bool movable);
         void setAllCheckersUnchosen();
-        bool canSomeoneEat(byte& x, byte& y, bool player);
+        //bool canSomeoneEat(byte& x, byte& y, bool player);
+        void moveBacklight(short x, short y);
+        void _kingMoveBacklight(short x, short y, short kx, short ky, bool f);
+        void kingMoveBacklight(short x, short y);
+        void clearBaclight();
+        bool ate = false;
     public:
         Game();
         ~Game();
         void getCoords(HWND hwnd, int x, int y, float *ox, float *oy);
         void drawBoard();
-        void drawCell(byte i, byte j);
+        void drawCell(short i, short j);
         void findChosenChecker(int *x, int *y);
         void checkerManipulation(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
         bool isCellOnBoard(byte x, byte y);
-        bool isCellOnPathLine(byte x, byte y, byte _x, byte _y);
-        void moveChecker(byte x, byte y, byte _x, byte _y);
+        bool isCellOnPathLine(short x, short y);
+        void moveChecker(short x, short y, short _x, short _y, bool& M);
         int getWhiteCheckers();
         int getBlackCheckers();
 };
